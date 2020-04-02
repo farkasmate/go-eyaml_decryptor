@@ -1,6 +1,9 @@
 FROM golang:alpine
 
+RUN apk add --update \
+  make
+
 WORKDIR /go/src/
 ADD . .
 
-CMD go run hello.go
+CMD make
